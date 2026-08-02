@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CodeWithLaksh — the JARVIS suite: WhatsApp automation, GPS location spoofing, and premium Android tools. Experimental builds, automation scripts, and clean applications.">
+    <meta name="theme-color" content="#030309">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpolygon points='20,2 38,11 38,29 20,38 2,29 2,11' stroke='%2300f5ff' stroke-width='2' fill='%23030309'/%3E%3Ccircle cx='20' cy='20' r='3.5' fill='%2300f5ff'/%3E%3C/svg%3E">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CodeWithLaksh">
+    <meta property="og:title" content="JARVIS | CodeWithLaksh">
+    <meta property="og:description" content="Intelligent tools and automation. Experimental builds, automation scripts, and premium applications crafted for zero compromise.">
+    <meta property="og:url" content="https://CodeWithLakxsh.github.io/">
+    <meta name="twitter:card" content="summary">
+    <title>JARVIS | CodeWithLaksh</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="loader">
+        <div class="loader-grid-bg"></div>
+        <div class="loader-body">
+            <div class="loader-hex-grid" id="loader-hex"></div>
+            <div class="loader-text">
+                <div class="loader-brand">J.A.R.V.I.S</div>
+                <div class="loader-msg" id="loader-msg">INITIALIZING SYSTEMS...</div>
+                <div class="loader-track">
+                    <div class="loader-fill" id="loader-fill"></div>
+                </div>
+                <div class="loader-pct" id="loader-pct">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cur-dot"></div>
+    <div id="cur-ring"></div>
+
+    <canvas id="canvas"></canvas>
+    <div class="aurora">
+        <div class="a-blob a1"></div>
+        <div class="a-blob a2"></div>
+        <div class="a-blob a3"></div>
+    </div>
+    <div class="scanlines"></div>
+
+    <nav id="nav">
+        <div class="nav-inner">
+            <div class="brand">
+                <svg class="brand-svg" viewBox="0 0 40 40" fill="none">
+                    <polygon points="20,2 38,11 38,29 20,38 2,29 2,11" stroke="currentColor" stroke-width="1.5" fill="rgba(0,245,255,0.05)"/>
+                    <polygon points="20,9 31,14.5 31,25.5 20,31 9,25.5 9,14.5" stroke="currentColor" stroke-width="1" opacity="0.35"/>
+                    <circle cx="20" cy="20" r="3.5" fill="currentColor"/>
+                </svg>
+                <span class="brand-name">CodeWithLaksh</span>
+            </div>
+            
+            <div class="nav-socials">
+                <a href="https://t.me/codewithlaksh" target="_blank" class="nav-gh nav-tg">
+                    <i class="fa-brands fa-telegram"></i>
+                    <span style="margin-left: 5px;">Telegram</span>
+                </a>
+                <a href="https://github.com/CodeWithLakxsh" target="_blank" class="nav-gh">
+                    <i class="fa-brands fa-github"></i>
+                    <span style="margin-left: 5px;">GitHub</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="hero" id="hero">
+            <div class="hero-l">
+                <div class="eyebrow">
+                    <span class="e-dot"></span>
+                    <span class="mono">JARVIS v2.0</span>
+                    <span class="e-arr">→</span>
+                    <span>Next-Gen Tools</span>
+                </div>
+
+                <h1 class="hero-title">
+                    <span class="tl t0">INTELLIGENT</span>
+                    <span class="tl t1 g-text">TOOLS &amp;</span>
+                    <span class="tl t2">AUTOMATION.</span>
+                </h1>
+
+                <p class="hero-body">
+                    Precision instruments for the digital frontier. Experimental builds, automation scripts, and premium applications crafted for zero compromise.
+                </p>
+
+                <div class="hero-cta">
+                    <a href="#downloads" class="btn-main">
+                        <i class="fa-solid fa-arrow-down"></i>
+                        <span>Explore Arsenal</span>
+                    </a>
+                    <a href="https://t.me/codewithlaksh" target="_blank" class="btn-ghost tg-ghost">
+                        <i class="fa-brands fa-telegram"></i>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="https://github.com/CodeWithLakxsh" target="_blank" class="btn-ghost">
+                        <i class="fa-brands fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <span class="m-val" data-count="3">0</span>
+                        <span class="m-lbl">Apps Live</span>
+                    </div>
+                    <div class="m-sep"></div>
+                    <div class="metric">
+                        <span class="m-val" data-count="100">0</span><span class="m-unit">%</span>
+                        <span class="m-lbl">Clean Build</span>
+                    </div>
+                    <div class="m-sep"></div>
+                    <div class="metric">
+                        <span class="m-val" data-count="0">0</span>
+                        <span class="m-lbl">Compromises</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-r">
+                <div class="orb-scene" id="orb-scene">
+                    
+                    <div class="bg-ring br1"></div>
+                    <div class="bg-ring br2"></div>
+                    <div class="bg-ring br3"></div>
+
+                    
+                    <div class="chip ch1"><i class="fa-solid fa-signal"></i><span>API_ACTIVE</span></div>
+                    <div class="chip ch2"><i class="fa-solid fa-code-branch"></i><span>v2.0.0</span></div>
+                    <div class="chip ch3"><i class="fa-solid fa-shield-check"></i><span>SECURE</span></div>
+                    <div class="chip ch4"><i class="fa-solid fa-bolt"></i><span>ONLINE</span></div>
+
+                    
+                    <div class="orb-body">
+                        <div class="rf rf1"><div class="o-ring or1"><div class="r-dot"></div></div></div>
+                        <div class="rf rf2"><div class="o-ring or2"><div class="r-dot"></div></div></div>
+                        <div class="rf rf3"><div class="o-ring or3"><div class="r-dot"></div></div></div>
+                        <div class="rf rf4"><div class="o-ring or4"><div class="r-dot"></div></div></div>
+                        <div class="orb-core">
+                            <div class="core-glow"></div>
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track">
+                <span>JARVIS WA MATRIX</span><span class="t-dot">·</span>
+                <span>JARVIS MUSIC</span><span class="t-dot">·</span>
+                <span>JARVIS GEO SPOOF</span><span class="t-dot">·</span>
+                <span>JARVIS BOMBER</span><span class="t-dot">·</span>
+                <span>CLEAN BUILD</span><span class="t-dot">·</span>
+                <span>ZERO ADS</span><span class="t-dot">·</span>
+                <span>HIGH PERFORMANCE</span><span class="t-dot">·</span>
+                <span>CODEWITH LAKSH</span><span class="t-dot">·</span>
+                <span>JARVIS WA MATRIX</span><span class="t-dot">·</span>
+                <span>JARVIS MUSIC</span><span class="t-dot">·</span>
+                <span>JARVIS GEO SPOOF</span><span class="t-dot">·</span>
+                <span>CLEAN BUILD</span><span class="t-dot">·</span>
+                <span>ZERO ADS</span>
+            </div>
+        </div>
+
+        <section class="s-dl" id="downloads">
+            <div class="s-head">
+                <div class="s-tag mono"><span class="bracket">[</span>01<span class="bracket">]</span>&nbsp; ACTIVE DEPLOYMENTS</div>
+                <h2>Download the Arsenal</h2>
+            </div>
+
+            <div class="dl-layout" style="margin-bottom: 80px;">
+                <div class="dl-wrap" id="dl-wrap-1">
+                    <div class="dl-float">
+                        <div class="dl-card" id="dl-card-1">
+                            <div class="card-holo"></div>
+                            <div class="corner ctlc"></div><div class="corner ctrc"></div>
+                            <div class="corner cblc"></div><div class="corner cbrc"></div>
+
+                            <div class="card-inner">
+                                <div class="card-top-row">
+                                    <div class="app-icon-wrap" style="color: #25D366; border-color: #25D366; box-shadow: 0 0 20px rgba(37,211,102,0.2);">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </div>
+                                    <div class="app-meta">
+                                        <h3>Jarvis Wa Matrix</h3>
+                                        <div class="chip-row">
+                                            <span class="c-chip stable" style="color: #25D366; border-color: #25D366;">v1.0.0 CROSS</span>
+                                            <span class="c-chip clean">SECURE</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="card-desc">
+                                    A powerful, multi-node WhatsApp automation engine compiled into optimized deployments. Personalize your outreach, attach heavy files, and control your campaigns seamlessly across devices.
+                                </p>
+
+                                <div class="card-specs">
+                                    <div class="spec-item">
+                                        <span class="sk mono">OS SUPPORT</span>
+                                        <span class="sv"><i class="fa-brands fa-windows"></i> Win / <i class="fa-brands fa-android"></i> Android</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="sk mono">BUILD</span>
+                                        <span class="sv"><i class="fa-solid fa-shield-check"></i> Encrypted (.jsc)</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="sk mono">SECURITY</span>
+                                        <span class="sv"><i class="fa-solid fa-lock"></i> Cloud Verified</span>
+                                    </div>
+                                </div>
+
+                                <div style="background: rgba(0,245,255,0.05); border: 1px dashed var(--c-cyan); padding: 12px; border-radius: 6px; margin-bottom: 20px; text-align: center; font-family: var(--font-mono); color: var(--text-dim); font-size: 0.85rem;">
+                                    <i class="fa-solid fa-key" style="color: var(--c-cyan);"></i> ACTIVATION KEY REQUIRED: <br>
+                                    <strong style="color: var(--text-main); font-size: 1.1rem; letter-spacing: 1px; display: block; margin-top: 5px;">CODEWITHLAKSH.IN</strong>
+                                </div>
+
+                                <a href="downloads/Jarvis Sender.zip" download="Jarvis Sender.zip" class="dl-btn" style="margin-bottom: 12px;">
+                                    <div class="dl-btn-icon"><i class="fa-solid fa-download"></i></div>
+                                    <span>Download Desktop App (.exe)</span>
+                                    <i class="fa-solid fa-arrow-right dl-arr"></i>
+                                </a>
+
+                                <a href="downloads/Jarvis Sender.apk" download="Jarvis Sender.apk" class="dl-btn">
+                                    <div class="dl-btn-icon"><i class="fa-brands fa-android"></i></div>
+                                    <span>Download Android App (.apk)</span>
+                                    <i class="fa-solid fa-arrow-right dl-arr"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feat-col">
+                    <div class="feat-card fv1">
+                        <div class="fi"><i class="fa-solid fa-network-wired"></i></div>
+                        <div class="ft"><span class="ft-t">Multi-Node Routing</span><span class="ft-s">Run unlimited WhatsApp accounts</span></div>
+                    </div>
+                    <div class="feat-card fv2">
+                        <div class="fi"><i class="fa-solid fa-paper-plane"></i></div>
+                        <div class="ft"><span class="ft-t">Heavy File Delivery</span><span class="ft-s">Safely blast APKs and PDFs</span></div>
+                    </div>
+                    <div class="feat-card fv3">
+                        <div class="fi"><i class="fa-brands fa-telegram"></i></div>
+                        <div class="ft"><span class="ft-t">Live Telegram Logs</span><span class="ft-s">Monitor delivery in real-time</span></div>
+                    </div>
+                    <div class="feat-card fv4">
+                        <div class="fi"><i class="fa-solid fa-code"></i></div>
+                        <div class="ft"><span class="ft-t">Smart Variables</span><span class="ft-s">Inject {FirstName} seamlessly</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dl-layout" style="margin-bottom: 80px;">
+                <div class="dl-wrap" id="dl-wrap-3">
+                    <div class="dl-float">
+                        <div class="dl-card" id="dl-card-3">
+                            <div class="card-holo"></div>
+                            <div class="corner ctlc"></div><div class="corner ctrc"></div>
+                            <div class="corner cblc"></div><div class="corner cbrc"></div>
+
+                            <div class="card-inner">
+                                <div class="card-top-row">
+                                    <div class="app-icon-wrap" style="color: #FF3366; border-color: #FF3366; box-shadow: 0 0 20px rgba(255,51,102,0.2);">
+                                        <i class="fa-solid fa-map-location-dot"></i>
+                                    </div>
+                                    <div class="app-meta">
+                                        <h3>Jarvis Geo Spoof</h3>
+                                        <div class="chip-row">
+                                            <span class="c-chip stable" style="color: #FF3366; border-color: #FF3366;">v1.0.0 STABLE</span>
+                                            <span class="c-chip clean">SECURE</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="card-desc">
+                                    Advanced location mocking utility. Spoof your device's GPS coordinates globally, simulate realistic movement patterns, and bypass regional restrictions effortlessly. Engineered with persistent core anchoring to lock your coordinates even through system cold reboots.
+                                </p>
+
+                                <div class="card-specs">
+                                    <div class="spec-item">
+                                        <span class="sk mono">PLATFORM</span>
+                                        <span class="sv"><i class="fa-brands fa-android"></i> Android 8.0+</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="sk mono">BUILD</span>
+                                        <span class="sv"><i class="fa-solid fa-shield-check"></i> System-Level</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="sk mono">ADS</span>
+                                        <span class="sv"><i class="fa-solid fa-ban"></i> Zero</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="sk mono">FORMAT</span>
+                                        <span class="sv"><i class="fa-solid fa-file-code"></i> APK</span>
+                                    </div>
+                                </div>
+
+                                <a href="downloads/Jarvis Geo Spoof.apk" download class="dl-btn">
+                                    <div class="dl-btn-icon"><i class="fa-solid fa-download"></i></div>
+                                    <span>Download APK</span>
+                                    <i class="fa-solid fa-arrow-right dl-arr"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feat-col">
+                    <div class="feat-card fv1">
+                        <div class="fi"><i class="fa-solid fa-globe"></i></div>
+                        <div class="ft"><span class="ft-t">Global Spoofing</span><span class="ft-s">Teleport anywhere instantly</span></div>
+                    </div>
+                    <div class="feat-card fv2">
+                        <div class="fi"><i class="fa-solid fa-route"></i></div>
+                        <div class="ft"><span class="ft-t">Route Simulation</span><span class="ft-s">Custom path routing</span></div>
+                    </div>
+                    <div class="feat-card fv3">
+                        <div class="fi"><i class="fa-solid fa-user-secret"></i></div>
+                        <div class="ft"><span class="ft-t">Anti-Detect</span><span class="ft-s">Bypass mock location blocks</span></div>
+                    </div>
+                    <div class="feat-card fv4">
+                        <div class="fi"><i class="fa-solid fa-microchip"></i></div>
+                        <div class="ft"><span class="ft-t">Persistent Anchor</span><span class="ft-s">Survives system cold reboots</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dl-layout">
+                <div class="dl-wrap" id="dl-wrap-2">
+                    <div class="dl-float">
+                        <div class="dl-card" id="dl-card-2">
+                            <div class="card-holo"></div>
+                            <div class="corner ctlc"></div><div class="corner ctrc"></div>
+                            <div class="corner cblc"></div><div class="corner cbrc"></div>
+
+                            <div class="card-inner">
+                                <div class="card-top-row">
+                                    <div class="app-icon-wrap">
+                                        <i class="fa-solid fa-music"></i>
+                                    </div>
+                                    <div class="app-meta">
+                                        <h3>Jarvis Music</h3>
+                                        <div class="chip-row">
+                                            <span class="c-chip stable">v1.1.0 STABLE</span>
+                                            <span class="c-chip clean">CLEAN</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="card-desc">
+                                    High-performance audio streaming. Advanced UI, seamless playback engine, zero compromises. Built from the ground up for precision.
+                                </p>
+
+                                <div class="card-specs">
+                                    <div class="spec-item">
+                                        <span class="sk mono">PLATFORM</span>
+                                        <span class="sv"><i class="fa-brands fa-android"></i> Android 8.0+</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="sk mono">BUILD</span>
+                                        <span class="sv"><i class="fa-solid fa-shield-check"></i> Verified</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="sk mono">ADS</span>
+                                        <span class="sv"><i class="fa-solid fa-ban"></i> Zero</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="sk mono">FORMAT</span>
+                                        <span class="sv"><i class="fa-solid fa-file-code"></i> APK</span>
+                                    </div>
+                                </div>
+
+                                <a href="downloads/Jarvis Music.apk" download class="dl-btn">
+                                    <div class="dl-btn-icon"><i class="fa-solid fa-download"></i></div>
+                                    <span>Download APK</span>
+                                    <i class="fa-solid fa-arrow-right dl-arr"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feat-col">
+                    <div class="feat-card fv1">
+                        <div class="fi"><i class="fa-solid fa-rocket"></i></div>
+                        <div class="ft"><span class="ft-t">Fast Install</span><span class="ft-s">One-tap, no config</span></div>
+                    </div>
+                    <div class="feat-card fv2">
+                        <div class="fi"><i class="fa-solid fa-headphones"></i></div>
+                        <div class="ft"><span class="ft-t">Hi-Fi Audio</span><span class="ft-s">Lossless streaming</span></div>
+                    </div>
+                    <div class="feat-card fv3">
+                        <div class="fi"><i class="fa-solid fa-bolt"></i></div>
+                        <div class="ft"><span class="ft-t">Lightweight</span><span class="ft-s">Minimal footprint</span></div>
+                    </div>
+                    <div class="feat-card fv4">
+                        <div class="fi"><i class="fa-solid fa-infinity"></i></div>
+                        <div class="ft"><span class="ft-t">Ad-Free Forever</span><span class="ft-s">Pure experience</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="s-ar" id="arsenal">
+            <div class="s-head">
+                <div class="s-tag mono"><span class="bracket">[</span>02<span class="bracket">]</span>&nbsp; THE ARSENAL</div>
+                <h2>More Modules Loading...</h2>
+                <p>Premium tools being engineered. The arsenal grows.</p>
+            </div>
+
+            <div class="ar-grid">
+                <div class="ar-card deployed sc-rev">
+                    <div class="ar-line-top"></div>
+                    <div class="ar-header">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span class="ar-badge b-live">DEPLOYED</span>
+                    </div>
+                    <h4>Jarvis Geo Spoof</h4>
+                    <p>Advanced Location Mocking</p>
+                    <div class="ar-line-btm"></div>
+                </div>
+
+                <div class="ar-card compiling sc-rev">
+                    <div class="ar-line-top compiling-line"></div>
+                    <div class="ar-header">
+                        <i class="fa-solid fa-fingerprint fp-icon"></i>
+                        <span class="ar-badge b-compile">COMPILING</span>
+                    </div>
+                    <h4>Project Engineering</h4>
+                    <p>Engineering in progress...</p>
+                    <div class="compile-track"><div class="compile-fill"></div></div>
+                    <div class="ar-line-btm"></div>
+                </div>
+
+                <div class="ar-card locked sc-rev">
+                    <div class="ar-line-top"></div>
+                    <div class="ar-header">
+                        <i class="fa-solid fa-lock"></i>
+                        <span class="ar-badge b-locked">CLASSIFIED</span>
+                    </div>
+                    <h4>Module Beta</h4>
+                    <p>Information restricted.</p>
+                    <div class="ar-line-btm"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="foot-inner">
+            <div class="foot-brand">
+                <svg viewBox="0 0 40 40" fill="none" style="width:26px;height:26px;color:var(--c)">
+                    <polygon points="20,2 38,11 38,29 20,38 2,29 2,11" stroke="currentColor" stroke-width="1.5" fill="rgba(0,245,255,0.05)"/>
+                    <circle cx="20" cy="20" r="3.5" fill="currentColor"/>
+                </svg>
+                <span>CodeWithLaksh</span>
+            </div>
+            <div style="text-align: center;">
+                <span class="foot-copy mono" style="display: block; margin-bottom: 5px;">© 2026 · DESIGNED &amp; ENGINEERED BY LAKSH</span>
+            </div>
+            
+            <div class="foot-socials">
+                <a href="https://t.me/codewithlaksh" target="_blank" class="foot-gh foot-tg">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+                <a href="https://github.com/CodeWithLakxsh" target="_blank" class="foot-gh">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </div>
+        <div class="foot-glow"></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+🚀 **Jarvis WA – WhatsApp Automation Tool**  
+
+🔥 **Features:**  
+✅ Multiple WhatsApp Nodes (Main, Business, Clones)  
+✅ Auto-send personalized messages via Accessibility  
+✅ CSV contact import with `{FirstName}` support  
+✅ Send images, videos, documents & APKs  
+✅ Pause/Resume/Stop anytime  
+✅ Real-time progress + Telegram logger  
+✅ Proxy rotator support  
+✅ Dark UI with full control  
+
+📥 **How to use:**  
+1. Install APK & enable Accessibility  
+2. Verify license  
+3. Add WhatsApp node(s)  
+4. Upload CSV & message template  
+5. Click START – done!  
+
+📲 **Get it now:**  
+🔗 [https://codewithlaksh.in/](https://codewithlaksh.in/)  
+
+👨‍💻 Crafted with ❤️ by **Laksh**

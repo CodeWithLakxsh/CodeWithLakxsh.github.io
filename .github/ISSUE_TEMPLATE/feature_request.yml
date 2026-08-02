@@ -1,0 +1,36 @@
+name: Feature request
+description: Suggest an idea for the website or the JARVIS suite
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an improvement. Please describe your idea clearly.
+  - type: textarea
+    id: idea
+    attributes:
+      label: What is your idea?
+      description: Describe the feature you would like to see.
+      placeholder: e.g. Add a projects gallery section.
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Why is this useful?
+      description: Explain the benefit of this feature.
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      description: What does this affect?
+      options:
+        - Website design / layout
+        - Website content
+        - Downloadable app / tool
+        - Other
+    validations:
+      required: true

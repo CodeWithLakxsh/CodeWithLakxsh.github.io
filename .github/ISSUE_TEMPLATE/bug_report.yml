@@ -1,0 +1,58 @@
+name: Bug report
+description: Report a problem with the website
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report an issue. Please fill in the details below.
+  - type: input
+    id: url
+    attributes:
+      label: Page URL
+      description: Which page or section has the problem?
+      placeholder: e.g. https://CodeWithLakxsh.github.io/
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the bug and what you expected instead.
+      placeholder: e.g. The download button does nothing when clicked.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: How can we reproduce the issue?
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. See error
+    validations:
+      required: true
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device / browser
+      description: What environment did you use?
+      options:
+        - Desktop (Windows / macOS / Linux)
+        - Mobile (Android / iOS)
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      description: Browser name and version, if known.
+      placeholder: e.g. Chrome 126, Firefox 127
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Add screenshots or console errors if available.
